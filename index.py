@@ -12,9 +12,15 @@ class Foro:
         # Empezamos a construir la interfaz
         # Ejecutamos la funcion donde nos muuestra el planteamiento del problema
         self.problem()
+        # Creamos boton para dar solucion al problema
+        self.button1 = Button(self.wind, text = "Solución", command = self.solution).pack(pady = 10)
 
+    def solution(self):
+        self.wind_solution = Toplevel()
+        self.wind_solution.title("Solución")
+        self.wind_solution.geometry("500x500")
 
-
+        Label(self.wind_solution, text = "SOLUCIÓN", font = "Arial").pack()
 
     def problem(self):
         self.txt = """Estimado estudiante.
@@ -35,7 +41,7 @@ class Foro:
         self.img = PhotoImage(file = "img.png")
 
         Label(self.wind, text = self.txt).pack()
-        Label(self.wind, image = self.img).pack()
+        Label(self.wind, image = self.img).pack(pady = 10)
 
 # Aqui empieza a correr el codigo
 if __name__ == '__main__':
