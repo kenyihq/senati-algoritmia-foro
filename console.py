@@ -1,3 +1,4 @@
+# Creamos una funcion el cual se imprime en consola, al correr el código
 def foro():
     print(" RUTA OPTIMA ")    
     print("      B       ")
@@ -19,7 +20,8 @@ def foro():
     dist_AJ = int(input("A y J: "))
 
     run(dist_FB, dist_FJ, dist_FA, dist_BA, dist_BJ, dist_AJ)
-    
+
+# Creamos otra funcion el cual recibe los inputs de las distancias en ingresadas en la funcion FORO
 def run(dist_FB, dist_FJ, dist_FA, dist_BA, dist_BJ, dist_AJ):
     suma = 0
     
@@ -27,6 +29,7 @@ def run(dist_FB, dist_FJ, dist_FA, dist_BA, dist_BJ, dist_AJ):
     partida = input("-> F / B / J / A: ")
     partida = partida.upper()
     
+    # Aqui se decide de acuerdo a la partida elegida
     if partida == "F":
         if dist_FB <= dist_FJ and dist_FB <= dist_FA and dist_BA <= dist_BJ:
             suma = dist_FB + dist_BA + dist_AJ + dist_FJ
@@ -127,10 +130,10 @@ def run(dist_FB, dist_FJ, dist_FA, dist_BA, dist_BJ, dist_AJ):
             suma = dist_AJ + dist_BJ + dist_FB + dist_FA
             print("\nRuta a seguir: A -> J -> B -> F -> A")
     else:
-        print("Ingrese una opción de partida válida")
-        
+        print("Ingrese una opción de partida válida")        
         run(dist_FB, dist_FJ, dist_FA, dist_BA, dist_BJ, dist_AJ)
-    
+        return    
     print("Ruta optima:", suma, "km. ")
-
-foro()
+# aqui empieza la ejecucion
+if __name__ == '__main__':
+    foro()
